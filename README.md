@@ -1,29 +1,66 @@
 ## Welcome to espeson's personal webpage
 
-You can use the [editor on GitHub](https://github.com/espeson/espeson.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Welcome! I’m an undergraduate student at Duke Kunshan University and a student worker at Environmental Research Center. Before coming to DKU, I was a student at Suzhou High School Affiliated to Xi’an Jiaotong University.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Coder
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+I'm trying to write code in Python and Java. Here is my proudest piece of code.
 
 ```markdown
-Syntax highlighted code block
+from mazegeneration import *
 
-# Header 1
-## Header 2
-### Header 3
+MG = Maze_Generator(40, 10)
+MG.create_maze()
+class Queue():
+    def __init__(self):
+        self.path = []
 
-- Bulleted
-- List
+    def enqueue(self, n):
+        self.path.append(n)
 
-1. Numbered
-2. List
+    def dequeue(self):
+        n = self.path[0]
+        self.path = self.path[1:]
+        return n
 
-**Bold** and _Italic_ and `Code` text
+def neighbour(step):
+    neighbour = []
+    if step.north != None:
+        neighbour.append(step.north)
+    if step.south != None:
+        neighbour.append(step.south)
+    if step.east != None:
+        neighbour.append(step.east)
+    if step.west != None:
+        neighbour.append(step.west)
+    return neighbour
 
-[Link](url) and ![Image](src)
+
+def BFS(graph, start, end):
+    Q = Queue()
+
+    path = [start]
+    Q.enqueue(path)
+
+    while True:
+        cur_path = Q.dequeue()
+        last_step = cur_path[-1]
+
+        if last_step == end:
+            return cur_path
+
+        for point in neighbour(last_step):
+            if point not in cur_path:
+                Q.enqueue(cur_path + [point])
+    return None
+
+
+index=0
+while index <len(BFS(MG, MG.START, MG.END))-1:
+    MG.draw_line(BFS(MG, MG.START, MG.END)[index], BFS(MG, MG.START, MG.END)[index + 1])
+    index+=1
+
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
