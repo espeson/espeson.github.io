@@ -1,6 +1,6 @@
 ## Welcome to espeson's personal webpage
 
-Welcome! I’m an undergraduate student at Duke Kunshan University and a student worker at Environmental Research Center. Before coming to DKU, I was a student at Suzhou High School Affiliated to Xi’an Jiaotong University.
+Welcome! I’m an undergraduate student at Duke Kunshan University.
 
 
 ### Coder
@@ -64,11 +64,3 @@ while index <len(BFS(MG, MG.START, MG.END))-1:
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/espeson/espeson.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
